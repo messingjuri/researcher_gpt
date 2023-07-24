@@ -216,9 +216,7 @@ def researchAgent(query: Query):
     actual_content = content["output"]
     return actual_content
 
-"""
-@app.get("/{query}")
-async def researchAgent(query: str = Query(...)):
-    content = agent({"input": query})
-    return content
-"""
+@app.get("/")
+def read_root():
+    return {"message": "Welcome to Researcher GPT!"}
+
